@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-ivory font-sans text-ink antialiased; overflow-x: hidden; }
+  h1, h2, h3 { @apply font-serif tracking-tight; }
+  :focus-visible { outline: 2px solid #13805f; outline-offset: 3px; border-radius: 6px; }
+  .on-dark :focus-visible { outline-color: #d9c08f; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+}
+
+@layer components {
+  .container-x { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+  .section { @apply py-20 sm:py-28; }
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.22em] text-emerald-deep; }
+  .h2 { @apply font-serif text-3xl leading-[1.12] text-navy-900 sm:text-4xl lg:text-[2.75rem]; }
+  .lead { @apply text-base leading-relaxed text-ink/70 sm:text-lg; }
+}
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+.draw-line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.4s .4s cubic-bezier(.65,0,.35,1) forwards; }
+.float-slow { animation: float 9s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .draw-line { animation: none; stroke-dashoffset: 0; }
+  .float-slow { animation: none; }
+}
