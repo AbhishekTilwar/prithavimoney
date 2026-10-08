@@ -19,7 +19,7 @@ export function Loader() {
           transition={{ duration: 0.5 }}
         >
           <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 0.6 }}>
-            <Monogram className="h-16 w-16" />
+            <Monogram className="h-20 w-20" tile />
           </motion.div>
           <motion.p
             className="mt-5 font-serif text-2xl text-ivory"
